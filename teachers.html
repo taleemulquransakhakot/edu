@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>اساتذۂ جامعہ دارالعلوم تعلیم القرآن، سخاکوٹ</title>
+
+  <!-- فونٹ: جمیل نوری نستعليق
+       نوٹ: نیچے @font-face میں دیے گئے راستے کو اپنی فائل کے مطابق درست کریں۔
+       آپ fonts/ فولڈر میں JameelNooriNastaleeq.woff2 رکھیں، یا اگر سسٹم میں پہلے سے فونٹ موجود ہو
+       تو یہ اعلان تب بھی ٹھیک کام کرے گا۔ -->
+  <style>
+    /* جمیل نوری نستعليق (لوکل/خود کی میزبان فائل) */
+    @font-face {
+      font-family: "Jameel Noori Nastaleeq";
+      src: url("fonts/JameelNooriNastaleeq.woff2") format("woff2"),
+           url("fonts/JameelNooriNastaleeq.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root{
+      --bg: #0f172a;         /* slate-900 */
+      --card: #111827cc;     /* semi transparent */
+      --text: #e5e7eb;       /* gray-200 */
+      --muted: #9ca3af;      /* gray-400 */
+      --accent: #22c55e;     /* green-500 */
+      --ring: #34d399;       /* emerald-400 */
+      --border: #1f2937;     /* gray-800 */
+    }
+
+    html, body{
+      height: 100%;
+    }
+
+    body{
+      margin:0;
+      background: radial-gradient(1200px 800px at 80% -10%, #256D85 0%, #2E8A57 40%, #D0B084 100%);
+
+      color: var(--text);
+      font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.8;
+    }
+
+    .container{
+      max-width: 1100px;
+      margin-inline: auto;
+      padding: 2rem 1rem 4rem;
+    }
+
+    header{
+      display: grid;
+      gap: .75rem;
+      margin-block: 1rem 2rem;
+      text-align: center;
+    }
+
+    .title{
+      font-size: clamp(1.6rem, 2.5vw + 1rem, 3rem);
+      font-weight: 700;
+      letter-spacing: .3px;
+      text-shadow: 0 2px 18px rgba(0,0,0,.35);
+    }
+
+    .subtitle{
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .toolbar{
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: .75rem;
+      margin-block: 1rem 2rem;
+      align-items: center;
+    }
+
+    .search{
+      position: relative;
+    }
+
+    .search input{
+      width: 100%;
+      padding: .9rem 1rem;
+      padding-inline-start: 3rem;
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      background: #0b1220;
+      color: var(--text);
+      outline: none;
+      box-shadow: 0 0 0 0 rgba(0,0,0,0);
+      transition: box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .search input:focus{
+      border-color: var(--ring);
+      box-shadow: 0 0 0 4px rgba(52,211,153,.15);
+    }
+
+    .search .icon{
+      position: absolute;
+      inset-inline-start: .9rem;
+      inset-block-start: 50%;
+      transform: translateY(-50%);
+      opacity: .7;
+      pointer-events: none;
+      font-size: 1.1rem;
+    }
+
+    .home-link{
+      justify-self: end;
+      text-decoration: none;
+      color: var(--text);
+      background: linear-gradient(135deg, #1f2937, #0b1220);
+      border: 1px solid var(--border);
+      padding: .8rem 1rem;
+      border-radius: .9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      transition: transform .15s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .home-link:hover{
+      transform: translateY(-1px);
+      border-color: var(--ring);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .card{
+      background: linear-gradient(180deg, white,white);
+      border: 1px solid var(--border);
+      padding: 1rem 1.1rem;
+      border-radius: 1.2rem;
+      min-height: 92px;
+      display: grid;
+      align-content: center;
+      gap: .4rem;
+      transition: transform .15s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: var(--ring);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .name{
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+
+
+
+
+
+    .role{
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    footer{
+      margin-top: 2.5rem;
+      color: var(--muted);
+      text-align: center;
+      font-size: .95rem;
+    }
+
+    /* چھوٹے اسکرینز پر بہتر فاصلہ */
+    @media (max-width: 480px){
+      .card{ min-height: 80px; }
+      .name{ font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="title">اساتذۂ جامعہ دارالعلوم تعلیم القرآن سخاکوٹ</h1>
+        </header>
+<nav>
+        <ul>
+		<li><a href="Darululoom.html">مرکزی صفحہ</a></li>
+            <li><a href="introduction.html">تعارف</a></li>
+            <li><a href="history.html">تاریخ آغاز اور ارتقا</a></li>
+            <li><a href="services.html">خدمات</a></li>
+            <li><a href="sections.html">شعبہ جات</a></li>
+             <li><a href="taleemi.html">تعلیمی و تربیتی نظام</a></li>
+        </ul>
+    </nav>
+
+    <div class="toolbar">
+      <div class="search">
+        <span class="icon" aria-hidden="true">🔎</span>
+        <input id="searchInput" type="search" placeholder="نام سے تلاش کریں…" autocomplete="off" />
+      </div>
+
+      <!-- اس ربط کو اپنے مین پیج کے نام کے مطابق بدلیں: مثلاً index.html -->
+      <a class="home-link" href="Darululoom.html" title="ہوم پیج پر واپس جائیں">🏠 ہوم پیج پر واپس جائیں</a>
+    </div>
+
+    <!--
+      ⚑ یہاں نام شامل کریں:
+      ہر استاد کے لیے <li class="card"> بلاک رکھیں۔ role اختیاری ہے۔
+      آپ چاہیں تو صرف نام رکھیں اور role والی سطر حذف کر دیں۔
+    -->
+    <ul id="teachers" class="grid" aria-live="polite">
+     
+
+	 <li class="card">
+        <div class="name"><a href="bani.html"><h2><b>مولانا شمس الرحیم رحمہ اللہ</b></h2></a> </div>
+        <div class="role"><a href="bani.html"> بانی جامعہ دارلعلوم تعلیم القرآن سخاکوٹ</a></div>
+      </li>
+      <li class="card">
+        <div class="name"><a href="tahir.html"><h2><b>شیخ القرآن والحدیث مولانا محمد طاہر صاحب</b></h2></a> </div>
+        <div class="role"><a href="tahir.html">مہتمم جامعہ دارالعلوم تعلیم القرآن سخاکوٹ</a></div>
+      </li>
+	  
+	
+      <li class="card">
+        <div class="name"><a href="jamal.html"><h2><b>شیخ القرآن والحدیث حضرت مولانا جمال الدین صاحب</b></h2></a></div>
+        <div class="role"><a href="jamal.html">نائب مہتمم جامعہ دارالعلوم تعلیم القرآن سخاکوٹ</a></div>
+      </li>
+     <li class="card">
+        <div class="name"><a href="fazalq.html"><h2><b>شیخ القرآن والحدیث حضرت مولانا فضل قیوم صاحب</b></h2></a></div>
+        <div class="role"><a href="fazalq.html">صدر مدرس جامعہ دارالعلوم تعلیم القرآن سخاکوٹ</a></div>
+      </li>
+	  <li class="card">
+        <div class="name"><a href="haneef.html"><h2><b>شیخ القرآن والحدیث حضرت مولانا حنیف اللہ صاحب</b></h2></a></div>
+        <div class="role"><a href="haneef.html">شیخ الحدیث جامعہ دارالعلوم تعلیم القرآن سخاکوٹ</a></div>
+      </li>
+	  <li class="card">
+        <div class="name"><a href="inayat.html"><h2><b>شیخ القرآن والحدیث حضرت مولانا عنایت اللہ صاحب</b></h2></a></div>
+        <div class="role"><a href="inayat.html">شیخ الحدیث جامعہ دارالعلوم تعلیم القرآن سخاکوٹ</a></div>
+      </li>
+	  <li class="card">
+        <div class="name"><a href="fazalh.html"><h2><b>شیخ القرآن والحدیث حضرت مولانا فضل حق صاحب</b></h2></a></div>
+        <div class="role"><a href="fazalh.html">استاذ الحدیث والفنون</a></div>
+      </li>
+	  <li class="card">
+        <div class="name"><a href="sami.html"><h2><b>شیخ القرآن والحدیث حضرت مولانا سمیع اللہ صاحب</b></h2></a></div>
+        <div class="role"><a href="sami.html">استاذ الحدیث والفنون</a></div>
+      </li>
+	  <li class="card">
+        <div class="name"><a href="kifayat.html"><h2><b>فضیلۃ الشیخ مفتی کفایت  اللہ صاحب</b></h2></a></div>
+        <div class="role"><a href="kifayat.html">استاذ الحدیث والفنون</a></div>
+      </li>
+	  <li class="card">
+        <div class="name"><a href="gulab.html"><h2><b>مولانا محمد گلاب صاحب</b></h2></a></div>
+        <div class="role"><a href="gulab.html">استاذ الفنون</a></div>
+      </li>
+	  <li class="card">
+        <div class="name"><a href="wakeel.html"><h2><b>مولانا مفتی عبد الوکیل صاحب</b></h2></a></div>
+        <div class="role"><a href="wakeel.html">استاذ الفنون</a></div>
+      </li>
+	  <li class="card">
+        <div class="name"><a href="zia.html"><h2><b>مولانا مفتی ضیاءاللہ بخاری صاحب</b></h2></a></div>
+        <div class="role"><a href="zia.html">استاذ الفنون</a></div>
+      </li>
+	  <li class="card">
+        <div class="name"><a href="sadiq.html"><h2><b>مولانا محمد صدیق صاحب</b></h2></a></div>
+        <div class="role"><a href="sadiq.html">استاذ الفنون</a></div>
+      </li>
+	  <li class="card">
+        <div class="name"><a href="jan.html"><h2><b>مولانا عالم جان صاحب</b></h2></a></div>
+        <div class="role"><a href="jan.html">استاذ الفنون</a></div>
+      </li>
+	  <li class="card">
+        <div class="name"><a href="dawod.html"><h2><b>مولانا محمد داود صاحب</b></h2></a></div>
+        <div class="role"><a href="dawod.html">ناظم جامعہ دارالعلوم تعلیم القرآن سخاکوٹ</a></div>
+      </li>
+	  <li class="card">
+        <div class="name"><a href="umar.html"><h2><b>مولانا مفتی عمر زمان صاحب</b></h2></a></div>
+        <div class="role"><a href="umar.html">استاذ الفنون</a></div>
+      </li>
+	  <li class="card">
+        <div class="name"><a href="sibghatullah.html"><h2><b>مولانا صبغت اللہ صاحب</b></h2></a></div>
+        <div class="role"><a href="sibghatullah.html">استاذ الفنون</a></div>
+      </li>
+    </ul>
+
+    <footer>
+ جامعہ دارالعلوم تعلیم القرآن سخاکوٹ
+    </footer>
+  </div>
+
+  <script>
+    // سادہ تلاش: جیسے جیسے ٹائپ کریں، فہرست فلٹر ہو جائے گی
+    const q = document.getElementById('searchInput');
+    const list = document.getElementById('teachers');
+
+    q.addEventListener('input', () => {
+      const term = q.value.trim().toLowerCase();
+      for(const li of list.children){
+        const text = li.innerText.toLowerCase();
+        li.style.display = text.includes(term) ? '' : 'none';
+      }
+    });
+  </script>
+</body>
+</html>
